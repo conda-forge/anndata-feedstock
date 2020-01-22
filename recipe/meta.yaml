@@ -32,8 +32,6 @@ requirements:
 test:
   imports:
     - anndata
-    - anndata.h5py
-    - anndata.readwrite
 
 about:
   home: https://github.com/theislab/anndata
