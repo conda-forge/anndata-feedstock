@@ -25,7 +25,7 @@ requirements:
     - scipy
     - h5py
     - natsort
-    - importlib_metadata # [py<38]
+    - importlib_metadata  # [py<38]
     - packaging
 
 test:
