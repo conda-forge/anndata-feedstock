@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.6.22.post1" %}
+{% set version = "0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,30 +7,31 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ce1461849954b6eedff67c3d31e25bdc9a18812bd537b3bff8743e41b70baa42
+  sha256: 285f76273c216bd0454a3152e0f96aba7ef134d524767a366aebfc73ad458ac9
 
 build:
-  noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [py<35]
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
     - pathlib
+    - setuptools_scm
   run:
-    - python >=3.5
+    - python
     - pandas >=0.23.0
     - scipy
     - h5py
     - natsort
+    - importlib_metadata  # [py<38]
+    - packaging
 
 test:
   imports:
     - anndata
-    - anndata.h5py
-    - anndata.readwrite
 
 about:
   home: https://github.com/theislab/anndata
