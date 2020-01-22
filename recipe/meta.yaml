@@ -12,14 +12,15 @@ source:
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [py<35]
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
     - pathlib
   run:
-    - python >=3.5
+    - python
     - pandas >=0.23.0
     - scipy
     - h5py
