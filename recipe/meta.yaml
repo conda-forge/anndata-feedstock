@@ -19,6 +19,7 @@ requirements:
     - python
     - pip
     - pathlib
+    - setuptools_scm
   run:
     - python
     - pandas >=0.23.0
