@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0940eb6e95a96469738120fd498ecd30904308f995b429e20a2ac852f25dce66
+  sha256: 923d2f187322a7df565cb757e246a43617bfe2d7ce30da10eaa30e65e349d560
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [py<35]
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<35]
 
 requirements:
   host:
@@ -38,7 +38,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'An annotated data matrix.'
+  summary: An annotated data matrix.
   description: |
     AnnData provides a scalable way of keeping track of data and learned annotations. 
     It was initially built for Scanpy (Genome Biology, 2018).
