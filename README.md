@@ -5,7 +5,7 @@ Home: https://github.com/theislab/anndata
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: An annotated data matrix.
 
