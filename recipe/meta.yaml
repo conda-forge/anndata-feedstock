@@ -15,12 +15,10 @@ build:
   skip: true  # [py<35]
 
 requirements:
-  build:
-    - flit-core
   host:
     - python
     - pip
-    - pathlib
+    - flit-core
     - setuptools_scm
     - pytoml
   run:
