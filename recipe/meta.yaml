@@ -10,32 +10,34 @@ source:
   sha256: 1efd7eb40839e0325bb066238280228a980d7dde6410793dbff2835f44a2d3ef
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<35]
+  noarch: python 
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.6
     - pip
     - flit-core
     - setuptools_scm
     - pytoml
   run:
-    - python
+    - python >=3.6 
     - pandas >=0.23.0
     - scipy >=1.4
     - h5py
     - natsort
     - importlib_metadata  # [py<38]
-    - packaging
+    - packaging >=20
+    - xlrd <2.0
 
 test:
   imports:
     - anndata
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/theislab/anndata
