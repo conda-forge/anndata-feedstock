@@ -32,8 +32,8 @@ requirements:
     - h5py >=3
     - natsort
     - packaging >=20
-    - importlib_metadata >=0.7 # [py<38]
-    - typing_extensions # [py<38]
+    - importlib_metadata >=0.7  # [py<38]
+    - typing_extensions  # [py<38]
 
 
 test:
