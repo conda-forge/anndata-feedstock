@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.7.8" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1efd7eb40839e0325bb066238280228a980d7dde6410793dbff2835f44a2d3ef
+  sha256: 94d2cc6f76c0317c0ac28564e3092b313b7ad19c737d66701961f3e620b9066e
 
 build:
-  number: 2
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python 
 
@@ -27,7 +27,8 @@ requirements:
     - scipy >=1.4
     - h5py
     - natsort
-    - importlib_metadata  # [py<38]
+    - importlib_metadata
+    - typing_extensions
     - packaging >=20
     - xlrd <2.0
 
