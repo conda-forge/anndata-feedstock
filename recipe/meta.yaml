@@ -26,11 +26,11 @@ requirements:
     - pandas >=0.23.0
     - scipy >=1.4
     - h5py
+    - numpy >=1.16.5
     - natsort
-    - importlib_metadata
-    - typing_extensions
+    - importlib_metadata >=0.7  # [py<38]
+    - typing_extensions  # [py<38]
     - packaging >=20
-    - xlrd <2.0
 
 test:
   imports:
