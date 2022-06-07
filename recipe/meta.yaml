@@ -28,9 +28,10 @@ requirements:
     - h5py >=3.0
     - numpy >=1.16.5
     - natsort
+    - packaging >=20
     - importlib_metadata >=0.7
     - typing_extensions
-    - packaging >=20
+    #Last two listed dependancies are needed until drop of Python37 support.
 
 test:
   imports:
