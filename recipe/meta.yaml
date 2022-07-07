@@ -10,33 +10,36 @@ source:
   sha256: 94d2cc6f76c0317c0ac28564e3092b313b7ad19c737d66701961f3e620b9066e
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<35]
+  noarch: python 
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.6
     - pip
     - flit-core
     - setuptools_scm
     - pytoml
   run:
-    - python
+    - python >=3.6 
     - pandas >=0.23.0
     - scipy >=1.4
     - h5py >=3.0
+    - numpy >=1.16.5
     - natsort
-    - importlib_metadata  # [py<38]
-    - typing_extensions  # [py<38]
-    - packaging
+    - packaging >=20
+    - importlib_metadata >=0.7
+    - typing_extensions
+    #Last two listed dependancies are needed until drop of Python37 support.
 
 test:
   imports:
     - anndata
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/theislab/anndata
