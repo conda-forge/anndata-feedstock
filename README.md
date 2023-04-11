@@ -1,11 +1,11 @@
-About anndata
-=============
+About anndata-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/anndata-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/theislab/anndata
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/anndata-feedstock/blob/main/LICENSE.txt)
 
 Summary: An annotated data matrix.
 
