@@ -10,34 +10,32 @@ source:
   sha256: 6c867201d0414ff3011a9eb7f93e098d67b81cff8e7c05efdf506d5362a0eb81
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
     - flit-core
     - setuptools_scm
     - pytoml
   run:
-    - python >=3.6
+    - python >=3.8
     - pandas >=0.23.0
     - scipy >=1.4
     - h5py >=3.0
     - numpy >=1.16.5
     - natsort
     - packaging >=20
-    - importlib_metadata >=0.7
-    - typing_extensions
-    #Last two listed dependancies are needed until drop of Python37 support.
 
 test:
   imports:
     - anndata
   commands:
     - pip check
+    - python -c "import anndata; print(anndata.__version__)"
   requires:
     - pip
 
