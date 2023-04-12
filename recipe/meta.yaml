@@ -43,7 +43,7 @@ about:
   home: https://github.com/theislab/anndata
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: An annotated data matrix.
   description: |
     AnnData provides a scalable way of keeping track of data and learned annotations. 
