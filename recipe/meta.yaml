@@ -16,20 +16,21 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - pip
     - flit-core
     - setuptools_scm
     - pytoml
   run:
-    - python >=3.8
-    - pandas >=0.23.0
+    - python >=3.9
+    - pandas >=1.1.1
     - scipy >=1.4
     - h5py >=3.0
     - numpy >=1.16.5
     - natsort
     - packaging >=20
     - array-api-compat
+    - exceptiongroup  # py<3.11
 
 test:
   imports:
