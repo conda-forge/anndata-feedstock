@@ -22,13 +22,13 @@ requirements:
     - hatch-vcs
   run:
     - python >=3.9
-    - pandas >=1.1.1, !=2.1.2
-    - scipy >=1.4
-    - h5py >=3.0
-    - numpy >=1.16.5
+    - pandas >=1.4, !=2.1.2
+    - scipy >=1.8
+    - h5py >=3.1
+    - numpy >=1.23
     - natsort
     - packaging >=20
-    - array-api-compat
+    - array-api-compat >1.4, !=1.5
     - exceptiongroup  # py<3.11
 
 test:
