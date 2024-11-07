@@ -29,7 +29,11 @@ requirements:
     - natsort
     - packaging >=20.0
     - array-api-compat >1.4, !=1.5
-    - exceptiongroup  # [py<311]
+    # exceptiongroup is only required for py<311. However, noarch recipes can't
+    # use Python version selectors since only one binary is built that has to be
+    # compatible with all Python versions. Thus as long as the recipe supports
+    # python_min<311, have to require exceptiongroup
+    - exceptiongroup
 
 test:
   imports:
