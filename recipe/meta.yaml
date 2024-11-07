@@ -54,6 +54,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - jdblischak
     - jakakokosar
     - pavlin-policar
     - flying-sheep
