@@ -10,18 +10,18 @@ source:
   sha256: 8186a841a991508152f7997d8d105c8fb16cb4ea421eb81c62a11932f32971bd
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.10
     - pip
     - hatchling
     - hatch-vcs
   run:
-    - python >=3.9
+    - python >=3.10
     - pandas >=1.4, !=2.1.2
     - scipy >=1.8
     - h5py >=3.1
@@ -47,7 +47,7 @@ about:
   license_file: LICENSE
   summary: An annotated data matrix.
   description: |
-    AnnData provides a scalable way of keeping track of data and learned annotations. 
+    AnnData provides a scalable way of keeping track of data and learned annotations.
     It was initially built for Scanpy (Genome Biology, 2018).
   doc_url: http://anndata.rtfd.io
   dev_url: https://github.com/theislab/anndata
