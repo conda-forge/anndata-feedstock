@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8186a841a991508152f7997d8d105c8fb16cb4ea421eb81c62a11932f32971bd
 
 build:
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - hatchling
     - hatch-vcs
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - pandas >=1.4, !=2.1.2
     - scipy >=1.8
     - h5py >=3.1
@@ -39,6 +39,7 @@ test:
     - python -c "import anndata; print(anndata.__version__)"
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/theislab/anndata
