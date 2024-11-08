@@ -6,30 +6,34 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8186a841a991508152f7997d8d105c8fb16cb4ea421eb81c62a11932f32971bd
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - hatchling
     - hatch-vcs
   run:
-    - python >=3.9
-    - pandas >=1.4, !=2.1.2
+    - python >={{ python_min }}
+    - pandas >=1.4,!=2.1.0rc0,!=2.1.2
     - scipy >=1.8
-    - h5py >=3.1
+    - h5py >=3.6
     - numpy >=1.23
     - natsort
-    - packaging >=20
+    - packaging >=20.0
     - array-api-compat >1.4, !=1.5
-    - exceptiongroup  # py<3.11
+    # exceptiongroup is only required for py<311. However, noarch recipes can't
+    # use Python version selectors since only one binary is built that has to be
+    # compatible with all Python versions. Thus as long as the recipe supports
+    # python_min<311, have to require exceptiongroup
+    - exceptiongroup
 
 test:
   imports:
@@ -39,6 +43,7 @@ test:
     - python -c "import anndata; print(anndata.__version__)"
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/theislab/anndata
@@ -47,7 +52,7 @@ about:
   license_file: LICENSE
   summary: An annotated data matrix.
   description: |
-    AnnData provides a scalable way of keeping track of data and learned annotations. 
+    AnnData provides a scalable way of keeping track of data and learned annotations.
     It was initially built for Scanpy (Genome Biology, 2018).
   doc_url: http://anndata.rtfd.io
   dev_url: https://github.com/theislab/anndata
