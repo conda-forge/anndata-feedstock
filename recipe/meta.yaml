@@ -59,6 +59,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - ilan-gold
     - jdblischak
     - jakakokosar
     - pavlin-policar
