@@ -34,6 +34,8 @@ requirements:
     # compatible with all Python versions. Thus as long as the recipe supports
     # python_min<311, have to require exceptiongroup
     - exceptiongroup
+  run_constrained:
+    - zarr <3
 
 test:
   imports:
