@@ -152,6 +152,7 @@ Feedstock Maintainers
 =====================
 
 * [@flying-sheep](https://github.com/flying-sheep/)
+* [@ilan-gold](https://github.com/ilan-gold/)
 * [@ivirshup](https://github.com/ivirshup/)
 * [@jakakokosar](https://github.com/jakakokosar/)
 * [@jdblischak](https://github.com/jdblischak/)
