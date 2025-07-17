@@ -22,20 +22,15 @@ requirements:
     - hatch-vcs
   run:
     - python >={{ python_min }}
-    - pandas >=1.4,!=2.1.0rc0,!=2.1.2
-    - scipy >1.8
-    - h5py >=3.7
-    - numpy >=1.23
+    - pandas >=2.1.0, !=2.1.2
+    - scipy >=1.12
+    - h5py >=3.8
+    - numpy >=1.26
     - natsort
-    - packaging >=20.0
-    - array-api-compat >1.4, !=1.5
-    # exceptiongroup is only required for py<311. However, noarch recipes can't
-    # use Python version selectors since only one binary is built that has to be
-    # compatible with all Python versions. Thus as long as the recipe supports
-    # python_min<311, have to require exceptiongroup
-    - exceptiongroup
-  run_constrained:
-    - zarr <3
+    - packaging >=24.2
+    - array-api-compat >=1.7.1
+    - zarr >=2.18.7,!=3.0.*
+    - legacy-api-wrap
 
 test:
   imports:
