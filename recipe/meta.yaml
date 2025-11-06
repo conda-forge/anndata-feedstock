@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.12.5" %}
+{% set version = "0.12.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 894415206bc2ed3d02392b15e093265ead769e927f73aab3c93dd024276ba997
+  sha256: 8d447e7201ea790fe568203495e9fd35d63962e029d408728b164d65d2540fa7
 
 build:
   number: 0
