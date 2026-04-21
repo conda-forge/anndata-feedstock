@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.12.10" %}
+{% set version = "0.12.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 73a73c99ca50400eb9dc7f2fdd400cf677ea4bb9ef1f7c04691c0fc557e43d7f
+  sha256: 80cad77bbd34c5478c6cd9b69a44590668807ac13bf80e10c19f04b8bf645e02
 
 build:
   number: 0
@@ -21,6 +21,7 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
+    - scverse-misc >=0.0.3
     - python >={{ python_min }}
     - pandas >=2.1.0,!=2.1.2,<3
     - scipy >=1.12,!=1.17.0
