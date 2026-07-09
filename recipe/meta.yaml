@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.13.0" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fac13140f425a393d24428b739d79bf91fcb9b83ec7cafeb1dd55718f44e914f
+  sha256: 969ee454dea1d162fc1e8218e74b4ec0498ca885aa66a6abf567b5c439bfab4d
 
 build:
   number: 0
@@ -21,7 +21,7 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - typing_extensions
+    - typing_extensions >=4.16
     # scverse-misc[settings] is present in the anndata pyproject.toml so we list the settings deps here
     - scverse-misc >=0.1.0
     - pydantic-settings
