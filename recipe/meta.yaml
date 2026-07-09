@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.12.19" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 336ccc88463b56c22969634ca5256c3829af8b087a5a4ecfdac3504fedaa27cc
+  sha256: fac13140f425a393d24428b739d79bf91fcb9b83ec7cafeb1dd55718f44e914f
 
 build:
   number: 0
@@ -21,16 +21,20 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - scverse-misc >=0.0.3
+    - typing_extensions
+    # scverse-misc[settings] is present in the anndata pyproject.toml so we list the settings deps here
+    - scverse-misc >=0.1.0
+    - pydantic-settings
+    - python-dotenv
     - python >={{ python_min }}
-    - pandas >=2.1.0,!=2.1.2,<3
-    - scipy >=1.12,!=1.17.0
-    - h5py >=3.8
-    - numpy >=1.26
+    - pandas >=2.3
+    - scipy >=1.14,!=1.17.0
+    - h5py >=3.11
+    - numpy >=2.1
     - natsort
     - packaging >=24.2
     - array-api-compat >=1.7.1
-    - zarr >=2.18.7,!=3.0.*
+    - zarr >=3.1
     - legacy-api-wrap
   run_constrained:
     - awkward >=2.3.2
