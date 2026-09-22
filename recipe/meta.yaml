@@ -1,5 +1,5 @@
 {% set name = "anndata" %}
-{% set version = "0.13.3.post0" %}
+{% set version = "0.13.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9c564b4f04af7f84e45f28de9c4ee3455e989cb05ba1d800054033420f24e8b0
+  sha256: fadee3955b4b826dd23d9c0aa296147d8624f8222210b6c8abc3c115a111dce4
 
 build:
   number: 0
